@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "es2020"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "build",
+    "module": "ES2020",
+    "moduleResolution": "Node",
+  },
+  "ts-node": {
+    "esm": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
