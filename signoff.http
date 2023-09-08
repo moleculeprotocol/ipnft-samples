@@ -1,0 +1,10 @@
+POST https://testnet.mint.molecule.to/api/signoffMetadata
+Content-Type: application/json
+
+{
+  "network": "goerli",
+  "minter": "0xd1f5B9Dc9F5d55523aB25839f8785aaC74EDE98F",
+  "to": "0xd1f5B9Dc9F5d55523aB25839f8785aaC74EDE98F",
+  "reservationId": 2,
+  "tokenURI": "ipfs://bafkreihsjl25u5irbp33t3ntwwrvsaulajzxbieqpugkcan5bo3bm4romq"
+}

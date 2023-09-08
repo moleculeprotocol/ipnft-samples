@@ -1,6 +1,7 @@
 import { CID } from "multiformats/cid";
 import * as json from "multiformats/codecs/json";
 import { sha256 } from "multiformats/hashes/sha2";
+import { promises as fs } from "node:fs";
 
 const checksum = async (u8: Uint8Array) => {
   //https://multiformats.io/multihash/
@@ -21,8 +22,11 @@ const verifyChecksum = async (
 };
 
 (async () => {
-  const binaryContent = new TextEncoder().encode("This is the content");
+  const filePath = process.argv[2];
+  //const binaryContent = new TextEncoder().encode("This is the content");
+  const binaryContent = await fs.readFile(filePath);
+
   const cid = await checksum(binaryContent);
   const valid = await verifyChecksum(binaryContent, cid.toString());
-  console.log(cid, valid);
+  console.log(cid, binaryContent.length, valid);
 })();
